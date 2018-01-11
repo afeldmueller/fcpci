@@ -1,0 +1,17 @@
+--- src/main.c.old	2017-11-14 20:55:01.699237951 +0100
++++ src/main.c	2017-11-14 20:59:39.261237984 +0100
+@@ -21,13 +21,13 @@
+  */
+ 
+ #include <stdarg.h>
+-#include <asm/uaccess.h>
+ #include <linux/version.h>
+ #include <linux/kernel.h>
+ #include <linux/module.h>
+ #include <linux/init.h>
+ #include <linux/string.h>
+ #include <linux/skbuff.h>
++#include <asm/uaccess.h>
+ #include <linux/errno.h>
+ #include <linux/capi.h>
+ #include <linux/ctype.h>

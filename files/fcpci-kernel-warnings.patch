@@ -1,0 +1,31 @@
+--- fritz/src/driver.c	2015-07-03 22:07:29.722401231 +0200
++++ fritz/src/driver.c.old	2015-07-03 22:08:59.024406871 +0200
+@@ -362,7 +362,6 @@
+ 		return FALSE;
+ 	}
+ #endif
+-	card->data = (unsigned) &irq_handler;
+ 	tasklet_init (&scheduler_tasklet, scheduler, 0);
+ 	disable_scheduler ();
+ 	result = request_irq (
+--- fritz/src/driver.h	2015-07-03 22:07:29.361401208 +0200
++++ fritz/src/driver.h.old	2015-07-03 22:08:51.454406393 +0200
+@@ -40,7 +40,6 @@
+ 	unsigned						base;
+ 	unsigned						irq;
+ 	unsigned						info;
+-	unsigned						data;
+ 	char *							version;
+ 	char *							string[8];
+ 	unsigned						count;
+--- fritz/src/lib.c	2006-01-05 00:00:00.000000000 +0100
++++ fritz/src/lib.c.old	2015-07-03 22:09:15.622407919 +0200
+@@ -40,7 +40,7 @@
+ #include "devif.h"
+ #endif
+ 
+-#define	PRINTF_BUFFER_SIZE	1024
++#define	PRINTF_BUFFER_SIZE 	992	
+ #define	TEN_MSECS		(HZ/100)
+ #define JIFF2MSEC		(1000/HZ)
+ 

@@ -1,0 +1,11 @@
+--- src/main.c.orig	2015-02-21 19:04:43.500460688 +0100
++++ src/main.c	2015-02-21 19:05:06.744406290 +0100
+@@ -356,7 +356,7 @@
+ 		lib_strncpy (REVISION, DRIVER_REV, sizeof (REVISION));
+ 	}
+ 	NOTE("%s, revision %s\n", DRIVER_LOGO, REVISION);
+-        NOTE("(%s built on %s at %s)\n", TARGET, __DATE__, __TIME__);
++//        NOTE("(%s built on %s at %s)\n", TARGET, __DATE__, __TIME__);
+ 		
+ #ifdef __LP64__
+ 	NOTE("-- 64 bit CAPI driver --\n");

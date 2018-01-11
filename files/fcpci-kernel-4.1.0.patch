@@ -1,0 +1,11 @@
+--- fritz/src/driver.c.old	2015-06-26 22:12:52.519568867 +0200
++++ fritz/src/driver.c	2015-06-26 22:13:25.453570384 +0200
+@@ -369,7 +369,7 @@
+ 			card->irq, 
+ 			&irq_handler, 
+ #if defined (__fcpci__) || defined (__fcpcmcia__)
+-			IRQF_DISABLED | IRQF_SHARED, 
++			IRQF_SHARED, 
+ #else
+ 			IRQF_DISABLED, 
+ #endif
