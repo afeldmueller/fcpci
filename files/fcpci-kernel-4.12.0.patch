@@ -1,0 +1,8 @@
+--- fritz/src/main.c~   2017-12-10 22:04:14.000000000 +0100
++++ fritz/src/main.c    2017-12-10 22:10:09.165818630 +0100
+@@ -30,4 +30,5 @@
+  */
+
++#include <linux/cache.h>
+ #include <stdarg.h>
+ #include <asm/uaccess.h>
