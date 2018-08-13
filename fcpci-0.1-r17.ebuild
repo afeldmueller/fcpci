@@ -5,9 +5,8 @@
 inherit eutils rpm linux-mod
 
 DESCRIPTION="AVM kernel 2.6/3.0 modules for Fritz!Card PCI"
-HOMEPAGE="http://opensuse.foehr-it.de/"
-SRC_URI="http://opensuse.foehr-it.de/rpms/11_2/src/${P}-0.src.rpm"
-
+HOMEPAGE="https://github.com/afeldmueller"
+SRC_URI="https://github.com/afeldmueller/fcpci/blob/master/files/${P}-0.src.rpm"
 LICENSE="AVM-FC"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
