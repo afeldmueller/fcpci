@@ -41,7 +41,6 @@ src_unpack() {
 	fi
 
 	rpm_src_unpack ${A} || die "failed to unpack ${A} file"
-	DISTDIR="${WORKDIR}" unpack ${PN}-suse[0-9][0-9]-${BIT}[0-9].[0-9]*-[0-9]*.tar.gz
 
 	cd "${S}"
 	epatch $(sed -n "s|^Patch[${PAT}]:\s*\(.*\)|../\1|p" ../${PN}.spec)
@@ -57,7 +56,7 @@ src_unpack() {
 			epatch "${FILESDIR}"/fcpci-kernel-2.6.39.patch
 		fi
 
-	fi
+		fi
 
 	convert_to_m src/Makefile
 

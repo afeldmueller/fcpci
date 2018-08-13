@@ -3,7 +3,7 @@
 
 inherit eutils rpm linux-mod
 
-DESCRIPTION="AVM kernel 2.6/3.0 modules for Fritz!Card PCI"
+DESCRIPTION="AVM Fritz!Card PCI modules"
 HOMEPAGE="https://raw.githubusercontent.com/afeldmueller/fcpci/"
 SRC_URI="https://raw.githubusercontent.com/afeldmueller/fcpci/master/files/${P}-0.src.rpm"
 
@@ -42,7 +42,6 @@ src_unpack() {
 	fi
 
 	rpm_src_unpack ${A} || die "failed to unpack ${A} file"
-	DISTDIR="${WORKDIR}" unpack ${PN}-suse[0-9][0-9]-${BIT}[0-9].[0-9]*-[0-9]*.tar.gz
 
 	cd "${S}"
 	epatch $(sed -n "s|^Patch[${PAT}]:\s*\(.*\)|../\1|p" ../${PN}.spec)
