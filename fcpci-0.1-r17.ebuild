@@ -1,13 +1,12 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 inherit eutils rpm linux-mod
 
-DESCRIPTION="AVM kernel 2.6/3.0 modules for Fritz!Card PCI"
-HOMEPAGE="https://github.com/afeldmueller"
-SRC_URI="https://github.com/afeldmueller/fcpci/blob/master/files/${P}-0.src.rpm"
-LICENSE="AVM-FC"
+DESCRIPTION="AVM Fritz!Card PCI modules"
+HOMEPAGE="https://raw.githubusercontent.com/afeldmueller/fcpci/"
+SRC_URI="https://raw.githubusercontent.com/afeldmueller/fcpci/master/files/${P}-0.src.rpm"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
@@ -41,7 +40,7 @@ src_unpack() {
 		PAT="${PAT}67"
 	fi
 
-	rpm_unpack "${A}" || die "failed to unpack ${A} file"
+	rpm_src_unpack ${A} || die "failed to unpack ${A} file"
 	DISTDIR="${WORKDIR}" unpack ${PN}-suse[0-9][0-9]-${BIT}[0-9].[0-9]*-[0-9]*.tar.gz
 
 	cd "${S}"
@@ -79,7 +78,7 @@ src_unpack() {
 			epatch "${FILESDIR}"/fcpci-kernel-warnings.patch
 		fi
 
-        if kernel_is ge 4 9 0 ; then
+		if kernel_is ge 4 9 0 ; then
 		    epatch "${FILESDIR}"/fcpci-kernel-4.9.0.patch
 		fi
 
@@ -88,12 +87,12 @@ src_unpack() {
 		fi
 
 		if kernel_is ge 4 14 0 ; then
-            epatch "${FILESDIR}"/fcpci-kernel-4.14.0.patch
-        fi
+			epatch "${FILESDIR}"/fcpci-kernel-4.14.0.patch
+		fi
 
 		if kernel_is ge 4 18 0 ; then
-            epatch "${FILESDIR}"/fcpci-kernel-4.18.0.patch
-        fi
+			epatch "${FILESDIR}"/fcpci-kernel-4.18.0.patch
+		fi
 
 	fi
 

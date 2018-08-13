@@ -1,14 +1,13 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 inherit eutils rpm linux-mod
 
-DESCRIPTION="AVM kernel 2.6/3.0 modules for Fritz!Card PCI"
-HOMEPAGE="http://opensuse.foehr-it.de/"
-SRC_URI="http://opensuse.foehr-it.de/rpms/11_2/src/${P}-0.src.rpm"
+DESCRIPTION="AVM Fritz!Card PCI modules"
+HOMEPAGE="https://raw.githubusercontent.com/afeldmueller/fcpci/"
+SRC_URI="https://raw.githubusercontent.com/afeldmueller/fcpci/master/files/${P}-0.src.rpm"
 
-LICENSE="AVM-FC"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
@@ -42,7 +41,7 @@ src_unpack() {
 		PAT="${PAT}67"
 	fi
 
-	rpm_unpack "${A}" || die "failed to unpack ${A} file"
+	rpm_src_unpack ${A} || die "failed to unpack ${A} file"
 	DISTDIR="${WORKDIR}" unpack ${PN}-suse[0-9][0-9]-${BIT}[0-9].[0-9]*-[0-9]*.tar.gz
 
 	cd "${S}"
@@ -65,7 +64,7 @@ src_unpack() {
 
 	if kernel_is ge 3 4 0 ; then
 		epatch "${FILESDIR}"/fcpci-kernel-3.4.0.patch
-	fi	
+	fi
 
 	fi
 
