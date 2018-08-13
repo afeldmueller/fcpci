@@ -1,0 +1,11 @@
+--- src/driver.c_orig	2018-08-13 13:46:01.437027007 +0200
++++ src/driver.c	2018-08-13 13:46:32.749028879 +0200
+@@ -625,7 +625,7 @@
+ 	ctrl->release_appl =	release_appl;
+ 	ctrl->send_message =	send_msg;
+ 	ctrl->procinfo =	proc_info;
+-	ctrl->proc_fops =	&ctr_proc_fops;
++/*	ctrl->proc_fops =	&ctr_proc_fops; */
+ 	if (0 != (res = attach_capi_ctr (ctrl))) {
+ 		dec_use_count ();
+ 		stop (card);
