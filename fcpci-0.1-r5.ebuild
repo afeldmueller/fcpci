@@ -57,7 +57,7 @@ src_unpack() {
 			epatch "${FILESDIR}"/fcpci-kernel-2.6.39.patch
 		fi
 
-		fi
+	fi
 
 	convert_to_m src/Makefile
 
